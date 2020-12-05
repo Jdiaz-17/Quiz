@@ -44,7 +44,7 @@ function obtenerValorConImpuestos(){
            }
     }
     
-    function obtenerImporteConImpuestos(precio,producto) {
+    function obtenerImporteConImpuestos(precio,producto,impuesto) {
         switch (producto) {
             case 1:
             impuesto = Number(1.21);
@@ -62,7 +62,7 @@ function obtenerValorConImpuestos(){
             break;
         }
     
-        alert ('Importe sin impuestos de ' + precio + ' y tipo de producto ' + producto + ' el resultado del importe con impuestos es de ' + precio)
+        alert ('Importe sin impuestos de ' + precio + ' y tipo de producto ' + producto + ' el resultado del importe con impuestos es de ' + precio*impuesto)
     
     }
     
