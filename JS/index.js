@@ -19,58 +19,42 @@ TipoMotor();
 
 /* Ejercicio 2 */
 
-function obtenerValorConImpuestos(){
-    var precio = prompt ('Introduzca el precio sin impuestos: ');
-    var producto = prompt ('Introduzca el tipo de producto: ');
-    precio = Number(precio);
-    producto = Number(producto);
-    if (isNaN (precio) || isNaN (producto)){
-        alert ('El parametro introducido no es numerico');
-    }
-    else if (producto != 1 && producto !=2 && producto !=3){
-        alert ('El producto introducido es incorrecto. Solo son válidos los valores numericos enteros');
-    }
-    else {obtenerImporteConImpuestos(precio,producto);}
-    }
+var  numeroproducto;
+var preciosiniva;
+
+
+
+function calculoimpuesto(){
+
+let  numeroproducto=parseInt(prompt("ingrese el numero de producto"));
+let preciosiniva=parseInt(prompt("Ingrese el precio sin iva"));
+
+
+if(numeroproducto==1){
+    precioconiva=((preciosiniva*0.21));
     
-    function obtenerValorConImpuestos2(){
-        var precio2 = prompt ('Introduzca el precio sin impuestos: ');
-        precio2 = Number(precio2);
-        if (isNaN (precio2)){
-            alert ('El precio que acabo de introducir no es numérico');
-        }
-          else {
-              obtenerImporteConImpuestos2(precio2);
-           }
-    }
+    let total=(precioconiva)+(preciosiniva);
+     
+    console.log("el precio con iva es"+ total + "  "+"El precio sin iva es "+preciosiniva);
+} else if(numeroproducto==2){
+    precioconiva=((preciosiniva*0.10));
+    let total=(precioconiva)+(preciosiniva);
+    console.log("el precio con iva es"+ total+"   "+"El precio sin iva es "+preciosiniva);
+   
+}else if(numeroproducto==3){
+    precioconiva=((preciosiniva*0.05));
+    let total=(precioconiva)+(preciosiniva);
+     
+    console.log("el precio con iva es"+ total+  "   "+"El precio sin iva es "+preciosiniva);
+}else{
+
+console.log("Solo hay tres tipos de producto");
+}
+
+
+}
+
+
+calculoimpuesto();
+     
     
-    function obtenerImporteConImpuestos(precio,producto,impuesto) {
-        switch (producto) {
-            case 1:
-            impuesto = Number(1.21);
-            break;
-    
-            case 2:
-            impuesto = Number(1.1);
-            break;
-    
-            case 3:
-            impuesto = Number(1.05);
-            break;
-    
-            default:
-            break;
-        }
-    
-        alert ('Importe sin impuestos de ' + precio + ' y tipo de producto ' + producto + ' el resultado del importe con impuestos es de ' + precio*impuesto)
-    
-    }
-    
-    function obtenerImporteConImpuestos2(precio2){
-        var resultado = [undefined, 121, 110, 105];
-        alert ('resultado[0] = ' + resultado[0] + ', resultado[1] = ' + resultado[1] + ', resultado[2] = ' + resultado[2] + ', resultado[3] = ' + resultado[3] + '.')
-        alert ('Importe sin impuestos de ' + precio2 + ' y tipo de producto 1 el importe es ' + precio2*resultado[2]/100 + ', si el producto es tipo 2 el importe es ' +  precio2*resultado[1]/100 + ' y si el producto es tipo 3 el importe es ' + precio2*resultado[3]/100 + '.');
-    
-    }
-    obtenerImporteConImpuestos();
-    obtenerImporteConImpuestos2();
